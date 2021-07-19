@@ -171,7 +171,7 @@
       * DNS request anomalies
       * Mismatch port-application traffic
       * Anomalies in privileged user account activity
-      * 
+
 
 
 
