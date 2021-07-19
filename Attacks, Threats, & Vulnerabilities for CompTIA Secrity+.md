@@ -171,7 +171,54 @@
       * DNS request anomalies
       * Mismatch port-application traffic
       * Anomalies in privileged user account activity
-
+* Virus
+  * Malicious code that requires user interaction to install and replicate
+* Cryto-malware/Ransomware
+  * Malicious application that scare or scam users into taking some type of action
+    * Typically paying the creator for removal of the ransomware/decryption of files
+* Trojan
+  * Seemingly friendly software that contains hidden malicious software
+* Worms
+  * Self-replicating program that is usually self contained and can execute and spread without user interaction
+  * Two main types of worms
+    * Network Service Worms
+      * Exploits network vulnerability to propagate and infect others
+    * Mass Mailing Worms
+      * Exploits email systems to spread and infect others
+* Potentially Unwanted Program (PUP)
+  * Applications that are typically downloaded as part of another program (adware, or spyware)d
+* File-less Virus
+  * Malware that operates in memory
+    * Not stored in a file nor installed on a victim's machine
+    * Typically hooks into a Windows PC via Powershell or WMI
+    * 2017 Ponemon Institute study estimates that 77 percent of detected attacks were file-less
+  * File-less/attack frameworks examples
+    * Empire
+    * PowerSploit
+    * MetaSploit
+    * CobaltStrike
+  * Enables file-less malware creation and Powershell post-exploit framework
+* Botnets
+  * Malicious code that infects large numbers of hosts for the purpose of launching large scale attacks on specific targets
+  * Attacker can be located anywhere in the world
+  * Control one or more Command and Control (C&C) Servers
+  * C&C servers can control thousands of bots (Zombies) for massive DDoS attacks
+* Logic Bomb
+  * Malicious code that triggers after a period of time based on some date or specific activity
+* Spyware
+  * Malicious software that captures user activity and reports back (keystrokes, website visits, etc.)
+* Keylogger
+  * Malicious application that once installed on a host can capture all keystrokes 
+    * Usernames/Passwords
+    * Sensitive Information
+    * Emails/ chats/ instant messages
+  * Captured files can be uploaded to a remote location, emailed, or stored locally for later retrieval
+* Rootkits
+  * Malicious code that installs itself at the OS or kernel level to avoid detection
+  * Rootkits are very difficult to get rid of
+    * Load before the OS loads
+    * Can disable anti-virus and anti-malware
+  * 
 
 
 
