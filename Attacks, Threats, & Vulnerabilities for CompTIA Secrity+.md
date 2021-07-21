@@ -297,7 +297,155 @@
     * POS malware / Infected USB sticks
     * MAlware (or hardware) installed on computer equipment or network gear before it reaches target company
 * Cloud-based vs. On-prem Attacks
-* Module Review
+  * Effectiveness of security depends on many factors
+    * Type of company / data center(s)
+    * Industry (regulations, compliance)
+  * Costs, expertise, data-mobility
+  * Infrastructure refreshes
+  * Frequency of data access
+  * Cloud Provider Security
+    * Large security staff
+    * Deep expertise across a wide range of industries
+    * 24/7 monitoring
+    * Compliance and regulatory expertise
+
+### Recognizing Application Attacks
+* Privilege Escalation
+
+* Cross Site Scripting (XSS)
+* SQL Injection
+* DLL Injection
+* LDAP Injection
+* XML Injection
+* Pointer Dereference
+* Directory Traversal / Command Injection
+* Buffer Overflow
+* Race Conditions
+* Time of Check
+* Secure Coding Concepts, Error Handling, and Input Validation
+* Replay Attacks
+* Integer Overflow
+* Cross Site Request Forgery (XSRF)
+* API Attacks
+* Resource Exhaustion
+* Memory Leak
+* SSL Stripping
+* Shimming
+* Refactoring
+* Pass the Hash
+
+### Identifying Network Attacks
+* Rogue Access Points and Evil Twin
+* Bluejack and Bluesnarfing
+* Dissociation
+* Jamming
+* RFID
+* Near Field Communication (NFC)
+* IV Attack
+* On-Path Attacks (Formerly MiTM)
+* On-Path Attacks (Formerly MiTB)
+* ARP Poisoning
+* IP/MAC Spoofing
+* MAC Flooding
+* MAC Cloning
+* DNS Poisoning
+* Typo Squatting/URL Hijacking
+* Distributed Denial of Service (DDoS)
+* Malicious Code Execution
+
+### Distinguishing Threat Actors, Vectors, and Intelligence Sources
+* Script Kiddies
+* Hacktivists
+* Organized Crime
+* Nation States/APT
+* Insiders
+* Competitors
+* Threat Actor Attributes
+* Attack Vectors
+* Use of Open Source Intelligence
+* CLosed/Proprietary Intelligence
+* Vulnerability Databases
+* Public and Private Information Sharing
+* Dark Web
+* Indicators of Compromise(IOC)
+* Automate Indicator Sharing (AIS)
+* TAXII Layout
+* MITRE
+* Gathering and Correlating Information
+* Predictive Analysis
+* Threat Maps
+* Live Cyber Threat Map
+* File/Code Repositories
+* Research Sources
+
+### Understanding Vulnerabilities and Security Risks
+* Cloud-base vs. On-premise
+* New Threats/Zero Days
+* Mis-configuration/Weak Configuration
+* Shared Accounts (Improperly Configured)
+* Weak Configuration Considerations
+* Weak Cipher Suites and Implementations
+* Improper Certificate and Key Management
+* Secure Protocols
+* Default COnfigurations
+* Third-party Risks
+* Vendor Management
+* Vulnerable Business Processes
+* Outsourced Code Management
+* Improper or Weak Patch Management
+* Legacy Platforms
+* Impact Areas
+* Effects of Impacts
+
+### Defining Security Assessment Techniques
+* Specific Types of Threats
+* What is Cyber Threat Intelligence?
+* Importance of Cyber Threat Intelligence
+* Threat Intelligence Classification
+* Strategic, Operational, and Tactical Intelligence
+* Gathering and Correlating Information
+* Stages of Risk Management
+* Risk Management Data Sources
+* Vulnerability Scanning
+* False Positive 
+* False Positive Audits
+* False Negatives
+* Intrusive vs, Non-intrusive
+* Passively Test Security Controls
+* Credentialed vs. Non-credentialed
+* Identify Vulnerabilities and Lack of Security Controls
+* Identify Common Misconfigurations
+* Things to Remember
+* Common Vulnerabilities and Exposures (CVE)
+* CVSS
+* Security Information and Event Management (SEIM)
+* Security Orchestration, Automation, and Response
+
+### Defining Penetration Testing
+* Penetration Testing
+* Penetration Testing Steps
+* Known, Unknown, and Partially Know Environments
+* Rule of Engagement
+* Lateral Movement
+* Escalation of Privilege
+* Methods of Privilege Escalation
+* Persistence
+* Cleanup
+* Bug Bounty
+* Pivoting 
+* Types of Reconnaissance
+* War Flying
+* War Driving
+* Red, Blue, Purple, and White Security Teams
+
+
+
+
+
+
+
+
+
 
 
     
