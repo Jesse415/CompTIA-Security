@@ -372,7 +372,7 @@
     ```
     <?xml version"1.0"?>
     <!DOCTYPE results [<!ENTITY harmless SYSTEM
-    "file:///var/www/config.imi">]>
+    "file:///var/www/config.ini">]>
     <results>
         <results>&harmless;</result>
     </results>
@@ -383,12 +383,47 @@
     * Remote code execution
   * C/C++, Assembly or any other language that uses pointers is potentially vulnerable to this type of attack
 * Directory Traversal / Command Injection
-  * 
+  * Attack that manipulates user input to cause the application to traverse a directory structure and access files not intended to 
 * Buffer Overflow
+  * Attack that causes a system or app to crash of behave unexpectedly
+    * Writing more data than the buffer can handle
+    * Data is written to adjacent memory
+  * Calls or pointers to jump to a different address that what was intended
+    * Can contain user executable code which could allow remote code execution
 * Race Conditions
+  * A race condition occurs when a pair of routine programming calls in an application do not perform in the sequential manner that was intended
+    * Potential security vulnerability if the calls are not performed in the correct order
+  * Potential Vulnerabilities
+    * Authentication: Trust may be assigned to an entity who is not who it claims to be
+    * Integrity: Data from an un-trusted (and possibly malicious) source may be integrated
+    * Confidentiality: Data may be disclosed to an entity impersonating a trusted entity, resulting in information disclosure
 * Time of Check
+  * Type of race condition
+    * Attacker is able to gain access prior to an authentication check
+    * Inserts code or alters authentication to disrupt normal authentication processes 
+    * Administrator see the intrusion, reset passwords, etc., but the attacker may still have access
+      * Attacker could remain logged in with old credentials
+  * Also referred to aas Time of Check to Time of Use (TOCTTOU)
 * Secure Coding Concepts, Error Handling, and Input Validation
+  * Application development is often a balancing act between time to market and security
+    * Building for security adds to development time
+      * Critical - If you don't have time to fine the vulnerabilities, the bad guys will
+  * Error and exception handling
+    * What does the application do when it encounters an error?
+      * Does it continue running, restart a process or module, or completely crash?
+    * If it crashes, does it give an attacker elevated privileges
+      * Keys to the castle?
+  * Input Validation
+    * Validate/sanitize what is entered at the client side and/or server side before it's processed
+    * Mitigate attacks such as Cross Site Scripting
+    * SQL injections
+  * References
+    * OWASP 
+    * CERT 
 * Replay Attacks
+  * Sniffing the wired or wireless network, a replay attack captures packets and puts them back on the wire
+    * Packets can potentially be modified and retransmitted to look like legitimate packets
+  * Mitigation - Sequencing helps mitigate the effectiveness of this type of attack
 * Integer Overflow
 * Cross Site Request Forgery (XSRF)
 * API Attacks
