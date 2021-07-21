@@ -311,14 +311,79 @@
 
 ### Recognizing Application Attacks
 * Privilege Escalation
+  * Obtaining elevated privileges(i.e, Administrator or Root) on the target
+    * Dump the SAM (Security Accounts Manager) (local accounts file)
+    * Retrieve /etc/passwd file
+    * Look for insecure files shares
+    * DLL pre-loading
+    * Insecure or weak security on processes 
+  * Many vulnerabilities enable an attacker to gain system-level permissions
 
 * Cross Site Scripting (XSS)
+  * Techniques used to hijack sessions
+    * Can be non-persistent (email, blog posts, etc)
+    * Persistent (server based) where an attacker doesn't need to actively target a user
+    * Non-Persistent
+      * Specially crafted URL's sent in an e-mail, instant message, blog post, etc. 
+    * DOM Based
+      * Can be non-persistent and be used to hijack sessions, etc
+    * Persistent
+      * Server based and can execute on a victim's PC by visiting an infected site
+  * Cross-Site Scripting via Email
+    * User is sent an email containing a malicious link and is convinced to click on the link
+    * The URL is sent to the legitimate site, along with malicious code which then executes in the victim's web browser
+  * Cross-Site Scripting with Unauthorized Request
+    * User is sent an email containing a malicious link and is convinced to click on the link
+    * The URL is sent to the legitimate site, along with malicious code which then executes in the victim's web browser
+    * The attacker could then issues additional requests to the legitimate server, post data to other parts of the site, etc.
 * SQL Injection
+  * SQL (Structured Query Language)
+    * Modifying the SQL query that's passed to web application
+    * SQL server, etc
+  * Adding code into a data stream
+    * bypass login screens
+    * Vulnerable websites return usernames, passwords, wtc, with the right SQL injection
+    * CAuse the application to "throw" an error and crash (allowing an attacker remote access)
 * DLL Injection
+  * DLL Injection is a process of inserting code into a running process
+  * Four basic steps:
+    * Attach to the process
+    * Allocate Memory within the process memory and determine appropriate memory addresses
+    * Instruct the process to Execute your DLL
+  * DLL injection attacks can be created manually or pentesting tools like Metasploit can automate the process
 * LDAP Injection
+  * Light weight Directory Access Protocol
+    * "Address Book" of user accounts used to authenticate users
+    * Identifies level of access, group memberships, etc
+  * Similar to SQL injection attacks in that the query that is passed to the web server is modified to include malicious query statements or code
 * XML Injection
+   ```
+   # Form Input Example
+   <input type="text" size=20 name="userName">Insert the username</input>
+
+   # Underlying Code
+   String ldapSearchQuery= "(cn=" + $userName + ")";
+    System.out.println(ldapSearchQuery);
+
+   # "crees) ( | (password = *) )"
+   ```
+  * Attack technique that manipulates the logic of an XML application or service
+    * Could be used to inject XML into a statement that alters a path to a file to disclose sensitive information
+    ```
+    <?xml version"1.0"?>
+    <!DOCTYPE results [<!ENTITY harmless SYSTEM
+    "file:///var/www/config.imi">]>
+    <results>
+        <results>&harmless;</result>
+    </results>
+    ```
 * Pointer Dereference
+  * Vulnerability that can cause an application to throw an exception error, which typically results in the application crashing
+    * Can be leveraged for a DoS attack against the entire system
+    * Remote code execution
+  * C/C++, Assembly or any other language that uses pointers is potentially vulnerable to this type of attack
 * Directory Traversal / Command Injection
+  * 
 * Buffer Overflow
 * Race Conditions
 * Time of Check
@@ -437,25 +502,4 @@
 * War Flying
 * War Driving
 * Red, Blue, Purple, and White Security Teams
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
 
