@@ -218,8 +218,86 @@
   * Rootkits are very difficult to get rid of
     * Load before the OS loads
     * Can disable anti-virus and anti-malware
-  * 
-
+* Backdoors
+  * Software that installs for the purpose of opening ports and installing additional software
+  * Works in tandem with trojans
+  * Can steal credentials, keylogger, etc
+  * Applications, executables, and images can house backdoors
+  * Can download additional software or allow remote access
+* Spraying
+  * Feeding a large number of usernames into a program that loops through passwords
+  * Brute force type of attack that can be used with dictionary attacks or a database of compromised passwords
+  * Mitigation - 2FA  
+* Brute Force and Dictionary Attacks
+  * Systematic approach trying every possible combination of passwords or passphrases
+    * Time consuming 
+    * Resource intensive
+  * Mitigation's
+    * Most account will lock out after "x" number of attempts
+    * Length of password increases time to crack
+  *  Dictionary
+     *  Using known words to try and defeat a cipher
+        *  Using words in a dictionary of a pre-defined set of possible words
+        *  Faster than brute force in that only words that are likely to succeed are user
+        * Common Tools
+          * Brutus, Cain and Abel, Crack, Aircrack-ng, John the Ripper, Airodump-ng, L0phtCrack, Metaspolit Project, Ophcrack
+  * Hybrid Attack combines dictionary attack along with word variations
+    * Used prior to resorting to plain brute-force attack
+* Rainbow Tables
+  * Precomputed table to reversing cryptographic hashes
+    * Reduces time to brute-force a password
+    * Increases amount of storage necessary to storage rainbow tables 
+    * Rainbow table needed for each has type(MD5, SHA1,etc)
+  * Mitigated by using "Password Salting"
+    * Adding random data to the hashing algorithm so that each users hash is unique even if both have the same password
+      * Larger salts increase security
+* Known Plain Text/ Ciphertext
+  * Access to both the plain text and the encrypted output (ciphertext)
+    * Tyhe attack can be used to reveal further information such as secret keys or code books used to encrypt subsequent messages
+  * Mitigation - Advanced Encryption Standard (AES) cipher is not vulnerable to this type of attack
+* Birthday Attack
+  * Brute-force attack that works on the cryptographic phenomenon of hash collisions
+    * Given enough time, two independent sources could yield the same hash
+      * Rate of occurrence varies depending on hash algorithm
+  * Birthday Paradox
+    * In a room full of people, what is the probability that two will share the same birthday
+      * 23 people = 50%
+      * 30 people = 70%
+      * 70 people = 99.9%
+      * 253 people = 100%
+  * Example:
+    * If a users password is "p-1234ju" which equals the hash value of "2kj3g4i2g324" you can look for a password with the hash value of "2kj3g4i2g324" which the password could be "idontknowthepassword" and use that password to log in because the hash values equal
+* Downgrade Attack
+  * Attack that forces a system to negotiate down to a lower0quality method of communication
+    * Allows an attacker to force a lower-grade, less secure method of communication
+    * Typically allowed to enable communication with legacy systems
+    * Often used with MiTM attacks
+* Physical Attacks, Malicious USB, and Skimming
+  * Malicious Universal
+    * Gates, locks, doors
+  * Universal Serial Bus (USB)
+  * Malicious Flash Drive
+  * Card Cloning
+  * Skimming
+    * Card reader used at checkout counter that scans magnetic strip
+    * Duplicate card reader that slips over ATM card reader and downloads magnetic strip info
+* Adversarial Artificial Intelligence
+  * Tainted training data for ML
+    * Technique to foll models by supplying deceptive (tainted) input
+  * Security of ML algorithms
+    * Threat modeling
+    * Attack simulations
+    * Countermeasures simulations
+    * Secure learning algorithms
+* Supply Chain Attack example
+  * Attack on an organization by targeting less-secure elements in a supply network
+    * Advanced Persistent Threats (Typically)
+    * Targets victims further down the supply chain network
+  * Example
+    * POS malware / Infected USB sticks
+    * MAlware (or hardware) installed on computer equipment or network gear before it reaches target company
+* Cloud-based vs. On-prem Attacks
+* Module Review
 
 
     
