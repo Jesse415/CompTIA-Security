@@ -792,26 +792,139 @@
   * Threat feeds
     * Recorded Future
   * Adversary tactics, techniques, and procedures (TTP)
-    * MITRE ATT&CK
+    * MITRE ATT&CK   
 ### Understanding Vulnerabilities and Security Risks
 * Cloud-base vs. On-premise
+  * Cloud-base
+    * Cons:
+      * Larger attack surface and multi-tenant infrastructure
+      * Less direct control over security as it's managed by 3rd-party and/or contractors
+    * Pros:
+      * Large security team constantly monitoring
+      * Typically larger investments in people, process and technology
+  * On-premises
+    * Cons:
+      * Constant need to refresh and maintain infrastructure
+      * Patching, upgrade firmware, monitor for security issues
+    * Pros:
+      * Direct control over security
+      * Single-tenant infrastructure (usually) with dedicated security team
 * New Threats/Zero Days
+  * Government/Nation States
+  * Organized Crime/Hacking Groups
+  * Hacktivists/Script Kiddies
 * Mis-configuration/Weak Configuration
+  * Weak or improper configurations can expose an organization to risk 
+    * False sense of security
+    * Gaping holes in defenses
+    * Increase the attack surface
+  * Mitigated through vulnerability scanning and security audits
+    * Establish a security/configuration baseline for each system and periodically audit
 * Shared Accounts (Improperly Configured)
+  * Users should not be able to share accounts/group accounts
+    * Reduces auditing/logging
+      * Very hard or impossible to tell what users made a change, accessed or deleted a file, etc.
+  * Non-repudiation
+    * Being able identify and validate user activity
 * Weak Configuration Considerations
+  * Open permissions
+  * Unsecured root accounts
+  * Errors (how they are handled)
+  * Unsecured protocols
+  * Default settings
+  * Open ports and services
 * Weak Cipher Suites and Implementations
+  * Cryptographic algorithms used in a connection are bundled together to form cipher suite. Each suite contains:
+    * Key exchange
+    * Authentication
+    * Encryption
+    * Integrity algorithm
+  * All four algorithms are not used all the time, depending on what is needed
+  * The following encryption algorithms should not be used:
+    * RC4
+    * Triple-DES
+    * 'NULL'
+  * Industry best practices is to not use Triple-DES and use AES-128 or AES-256 instead
 * Improper Certificate and Key Management
+  * Many companies are at risk due to poor certificate and key managements practices
+    * Manual certificate/key management
+    * Lack of insight/reporting automation
+    * No centralized policies
+    * No method to replace compromised CA certificates
 * Secure Protocols
+  * When given the option, always choose the highest security possible when establishing communications over an unsecured medium
+    * FTPS
+    * HTTPS
+    * SSL/TLS
+    * Secure POP/IMAP
+  * IP (Internet Protocol)
+    * Connection-less protocol that's responsible for network addressing
+    * Provides routing of packets between networks
+  * TCP (Transmission Control Protocol)
+    * Connection oriented protocol that established connections between end-points
+    * Provides guaranteed delivery of packets
+  * UDP (User Data-gram Protocol)
+    * Connection-less oriented protocol with no guarantee of delivery (best effort)
+  * TCP Three-Way Handshake
+    * Three-way handshake establishes connection between two hosts
+      * A client node sends a SYN data packet over an IP network to a server to determine if the server is open for a new connection
+      * The target server must have open ports that can accept and initiate new connections. Server responds and returns a confirmation receipt (SYN/ACK packet)
 * Default COnfigurations
+  * Default configurations shouldn't be considered secure
+    * Change things like admin accounts, default passwords
+    * Harden systems wherever possible
+    * Establish baselines and periodically audit for compliance
+  * Establish a patching and lifecycle management cadence
 * Third-party Risks
+  * Vendor management
+    * System integrations
+    * Lack of vendor support
+  * Supply chain
+  * Outsourced code development
+  * Data storage
 * Vendor Management
+  * Do their systems integrate with yours?
+  * Are they acquiring new systems or deprecating existing ones?
+  * Can/will they force you to upgrade or buy new?
+  * Mergers/acquisitions
+    * Do existing vendors support the newly acquired systems
+  * Lack of vendor support
 * Vulnerable Business Processes
+  * False negatives are the opposite of false positive
+    * You had an incident but failed to recognize it
+      * Controls ser up improperly
+      * Operator error
+  * Type I, II, III Errors
+    * Type I = False positives
+    * Type II = False negatives
+    * Type III = You arrive at the right conclusion for the wrong reasons 
 * Outsourced Code Management
+  * Agreements in place
+    * Are there operating agreements stating who owns the code?
+    * How are liability and potential damages addressed?
+    * Where is data stored, how is it secured?
 * Improper or Weak Patch Management
+  * Firmware
+  * Operating Systems
+  * Applications
 * Legacy Platforms
+  * Security vulnerabilities
+    * Older platforms often have bugs/vulnerabilities that don't have patches or updates
+  * Hardware failures
+    * As infrastructure ages, the rate of failures increase and the availability of parts decreases -introducing risk into the environment 
+  * Tribal knowledge
+    * Older platforms may have fewer people who are subject matter experts, making administrating and maintaining more of a challenge
 * Impact Areas
+  * Data loss
+  * Data Breaches
+  * Data exfiltration
+  * Identity theft
+  * Availability loss
 * Effects of Impacts
-
+  * Financial Impact
+    * CCPA = California Consumer Privacy Act
+    * GDPR = General Data Protection Regulation
+  * Reputation Impact
 ### Defining Security Assessment Techniques
 * Specific Types of Threats
 * What is Cyber Threat Intelligence?
