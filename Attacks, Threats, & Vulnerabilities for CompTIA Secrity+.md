@@ -587,34 +587,212 @@
   * Mitigation
     * Can be mitigated bu network administrators setting policy to disallow computers from responding to ICMP requests or broadcasts
     * Configure routers to not forward broadcasts (default on most routers)
+* DDoS
+  * DDoS type of attack
+    * Goal being to slow down the target server or network to point of being unusable
+  * Attack vectors
+    * Network
+      * DNS amplification (SMURF attack)
+    * Application
+      * HTTP GET/POST attacks
+  * Operational Technology (OT)
+    * Web Application Firewalls (WAF)
+    * IP reputation databases
+    * Challenge to requestor (i.e. CAPTCHA)
 * Malicious Code Execution
-* 
-
+  * Can be attack vectors
+    * PowerShell
+    * Python
+    * Bash
+    * Macros
+    * Virtual Basic for Applications
+  * Malware sent via email or malicious links
+    * Malicious code can be installed and run to execute MiTM, MiTB and other data manipulation/exfiltration attacks
+  * Infected USB sticks and other removable media
+    * Scripts can be executed automatically upon access to install malicious code (malware, ransomware, backdoors)
+  * Remote Access Trojans (RAT)/Backdoors
+    * RAT programs can allow complete control over a target system including access to browser sessions, data, webcams, etc.
 ### Distinguishing Threat Actors, Vectors, and Intelligence Sources
 * Script Kiddies
+  * Hackers that are relatively new or unskilled
+    * Typically looking to see that they can get into
+    * The challenge is the attraction
+    * Not typically associated with any organized hacking groups
+    * Usually not well funded
 * Hacktivists
+  * Hackers who are motivated bu ideology or some social/political cause 
+    * Can be well funded and skilled
+    * Usually deface websites
+    * Steal information
+      * Personal information and credentials
+    * DDoS
+    * Not particularly patient or stealthy
 * Organized Crime
+  * Hackers who are motivated by financial gain
+    * Deliberate with high technical capability
+    * Well-funded
+    * Patient and persistent
+    * POS terminals, ATM machines, credit card numbers, etc.
+    * Steal personal information for sale on the dark web
 * Nation States/APT
+  * Highly skilled hackers whose main goal is to penetrate government or commercial systems
+    * Very well funded and connected
+    * Government agency 
+    * Cyber espionage
+    * Data/IP theft
+    * Sabotage
+    * Cyber warfare
+    * Very stealthy and persistent
 * Insiders
+  * Often motivated by financial gain
+    * CERT advises that over 70% of IP theft cases involve insiders
+    * Accidental exposure can occur from misuse or misconfigured systems
+    * Data theft includes IP and company secrets
 * Competitors
-* Threat Actor Attributes
+  * Motivated by financial gain
+    * Competitive advantage
+    * Theft of IP or company secrets
+    * Sabotage
+    * Can be well funded and range from low to high skilled
 * Attack Vectors
+  * Direct Access
+    * Physical access
+    * On-Site
+    * Theft/removal
+    * Physical security
+    * User training & awareness
+  * Wireless
+    * Captive portal
+    * Evil twin
+    * Network sniffing 
+    * VPN/Encryption
+    * User training & awareness
+  * Email
+    * Malware
+    * Malicious links
+    * Phishing/Whaling
+    * User training & awareness
+  * Supply Chain
+    * weak link 
+    * Downstream attacks
+    * SLA'a in place Assess links in the chain
+  * Social Media
+    * Malicious links 
+    * Phishing
+    * Social proof
+    * Group consensus
+    * User Training & awareness
+  * Removable Media
+    * USB sticks
+    * CF cards
+    * CD/DVD
+    * MAlware/ransomware
+    * Group policy
+    * Corporate policies
+    * Group policy Corporate policies
+    * User training & awareness
+  * Cloud
+    * Cloud provider vulnerabilities
+    * DDoS
+    * Multi-tenancy
+    * SLA's (Service Level Agreements) in place
+    * Assess providers & 3rd party agreements
 * Use of Open Source Intelligence
-* CLosed/Proprietary Intelligence
-* Vulnerability Databases
-* Public and Private Information Sharing
-* Dark Web
-* Indicators of Compromise(IOC)
-* Automate Indicator Sharing (AIS)
-* TAXII Layout
-* MITRE
-* Gathering and Correlating Information
-* Predictive Analysis
-* Threat Maps
-* Live Cyber Threat Map
-* File/Code Repositories
-* Research Sources
+  | Tools for OSINT | | | | |
+  | :-: | :-: | :-: | :-: | :-: |
+  | Maltego | Metagoofil | Shodan | Google hacking Database | Spokeo |
+  | FOCA | EXIF Data Viewers | BackTrack Linux | Buscador Linux |
+  | Kali Linux | Social Engineer Toolkit | PeekYou | Lullar |
+  | Wayback machine | YouGetSignal | Browser Plugins | Metasploit |
 
+* Closed/Proprietary Intelligence
+  * Commercial Sources
+    * Typically not available to the public at large
+    * Part of a software package and/or service
+    * Often has SIEM integration SOAR capabilities built-in
+* Vulnerability Databases
+  * Google Hacking Database (GHDB)
+    * www.exploit-db.com
+  * VirusTotal
+    * virustotal.com
+  * NVD (National Vulnerability Database)
+    * nvd.nist.gov
+  * MITRE CVE database
+    * cve.mitre.org
+* Public and Private Information Sharing
+  * Cybersecurity Act of 2015
+    * Provided a framework for sharing of information between public and private sectors
+    * Goal of sharing information across both sectors to help strengthen defense and quicken response times
+  * Information Sharing and Analysis Centers(ISACs)
+  * National cybersecurity and communications integration center (NCCIC)
+* Indicators of Compromise(IOC)
+  * Pieces of data (breadcrumbs) that can identify potential malicious activity
+    * Common IOCs
+      * Unusual outbound traffic
+      * Unusual privileged account activity
+      * Geographical anomalies
+      * Suspicious registry or system file changes
+      * Mismatched port-application traffic
+* Automate Indicator Sharing (AIS)
+  * Department of Homeland Security (DHS) free sharing service
+    * Shares indicators between the federal government and private sector at machine speed
+    * Participants connect to DHS managed systems at NCCIC
+  * All systems must be able to communicate using STIX and TAXII specifications
+  * STIX = Structured Threat Information Expression
+  * TAXII = Trusted Automated Exchange of Indicator Information
+* MITRE
+  * MITRE is a not-for-profit organizations that manages federal funding for research projects across multiple agencies
+    * Common Vulnerabilities and Exposures (CVE) database
+    * Common Weakness Enumeration (CWE) database
+  * MITRE ATT&CK (Adversarial Tactics, Techniques and Common Knowledge) Framework
+    * Trusted Automated Exchange of Intelligence Information (TAXII)
+      * Transport protocol that allows sharing of threat intelligence information over HTTPS using API's
+    * Structured Threat information eXpression (STIX)
+      * Standardized format for presenting threat intelligence information
+  * Tactic Categories (314 Tactics)
+    1. Initial access (11)
+    2. Execution (33)
+    3. Persistence (59)
+    4. Privilege escalation (28)
+    5. Defense evasion (67)
+    6. Credential Access (19)
+    7. Discovery (22)
+    8. Lateral Movement (17)
+    9. Collection (13)
+    10. Command and Control (22)
+    11. Exfiltration (9)
+    12. Impact (14)
+* Gathering and Correlating Information
+  * Data in a vacuum, without context, is extremely difficult to interpret and understand exactly what data is valuable and what is noise
+  * Categorize TTPs and Enrich Alerts to track, target and deter/prevent attacks
+* Predictive Analysis
+  * AI and machine learning
+    * Provides proactive analysis to detect breaches before they occur
+    * Learning algorithms constantly monitor learn and evolve to detect new and emerging threats
+* Threat Maps
+  * Provide real-time monitoring of threats
+    * Type
+    * Origin/destination
+    * Threat level
+  * Can be enriched with additional threat feeds/data
+  * Localized for a specific company or industry, or global showing attacks worldwide
+* File/Code Repositories
+  * GitHub is the most common
+    * Users/developers use GitHub as a repository for code version control
+    * Numerous GitHub repositories are not secured properly, leaking sensitive information
+  * Bitbucket has similar offerings, more geared toward enterprise customers
+* Research Sources
+  * Vender websites
+  * Vulnerability feeds
+  * Conferences
+  * Academic journals
+  * Request for comments (RFC)
+  * Local industry groups
+  * Social media
+  * Threat feeds
+    * Recorded Future
+  * Adversary tactics, techniques, and procedures (TTP)
+    * MITRE ATT&CK
 ### Understanding Vulnerabilities and Security Risks
 * Cloud-base vs. On-premise
 * New Threats/Zero Days
