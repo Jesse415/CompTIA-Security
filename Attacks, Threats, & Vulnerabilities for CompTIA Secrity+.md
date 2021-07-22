@@ -318,7 +318,6 @@
     * DLL pre-loading
     * Insecure or weak security on processes 
   * Many vulnerabilities enable an attacker to gain system-level permissions
-
 * Cross Site Scripting (XSS)
   * Techniques used to hijack sessions
     * Can be non-persistent (email, blog posts, etc)
@@ -425,33 +424,171 @@
     * Packets can potentially be modified and retransmitted to look like legitimate packets
   * Mitigation - Sequencing helps mitigate the effectiveness of this type of attack
 * Integer Overflow
+  * Integer overflow condition occurs when the result of an arithmetic operation exceeds the maximum size of integer type used to store it
+  * When the overflow occurs, the interpreted value appears to "wrap around" the max value and start at the min value
+    * Could allow transactions to be reversed (i.e. money sent instead of received)
 * Cross Site Request Forgery (XSRF)
+
+    * CSRF or "See-Surf"
+  * Requires victim to have recently visited the target website and have a valid cookie (not expired)
+  * XSS & XSRF Distinction
+    * In a XSS attack, the browser runs malicious code because it was served from a site it trusts
+    * In a XSRF attack, the server performs an action because it was sent a request from a client it trusts
 * API Attacks
-* Resource Exhaustion
+  * Hostile usage of an API
+    * Injection attacks
+    * DoD/DDos Attacks
+    * Authentication hijacking
+    * Data exposure
+    * MiTM attacks
+  * Traditional methods of protection don't work
+    * WAF and simple port blocking
+    * Continuously evolving API's
+  * Resource Exhaustion
+    * Attack whereby a malicious user executes code or processes on a machine over and over until all resources are exhausted
+    * Denial of Service (DoS) or Distributed Denial of Service (DDoS) are examples of this type of attack
 * Memory Leak
+  * A memory leak is typically an unintentional consumption of memory. The application fails to release the memory once it's no longer needed
+  * This consumption of resources can over time lead to a variety of issues:
+    * Degraded system performance
+    * Abnormal system behavior
+    * System crashes
+    * DoS
+  * Threat actors can use those vulnerabilities to try and crash a system to gain elevated privileges or take a system offline via a Denial of Service attack
 * SSL Stripping
+  * MitM type of attack that strips away SSL encryption
+    * Enables an attacker to intercept traffic between victim and target
+    * Enterprise users, wired or Wi-Fi hotspots, etc.
+  * Mitigation
+    * Use SSL everywhere
+      * Not just on pages that contain sensitive data
+    * Use HSTS
+      * HTTP strict Transport Security
+      * Forces clients/browsers to connect over HTTPS 
 * Shimming
+  * Shim databases are part of Microsoft Window's Application Compatibility Infrastructure
+    * Used to maintain compatibility with legacy applications
+    * Can be used for malicious purposes by custom shim databases to install code, patches, etc.
 * Refactoring
+  * Modifying an application's source code without changing the underlying functionality
+    * Purpose - Fix bugs, patch code and tighten up security without changing or adversely affecting the underlying functionality
 * Pass the Hash
+  * Harvesting a user's password hash to authenticate to a remote server or service
+  * Normal operation
+    1. User wants to access remote resource
+    2. Server sends authentication challenge
+    3. User enters their credentials (username/password)
+    4. Password in converted to a has value
+    5. Hash value is sent to the server
+    6. Server checks the hash  value against the expected value
+    7. Access is granted to resource (assuming hash values match)
+  * Passing the Hash
+    1. Hacker wants to access remote resource
+    2. Server sends authentication challenge
+    3. Hacker enters username and stolen hash value
+    4. Hash value is sent to the server
+    5. Server checks the hash value against the expected value
+    6. Access is granted to resource (assuming hash values match)
 
 ### Identifying Network Attacks
 * Rogue Access Points and Evil Twin
+  * Unauthorized access point
+    * Used to steal or intercept data
+    * Can be combined with jamming/interference techniques
+  * Installed in a corporate network bu unauthorized personnel
+  * Installed by hackers for Man in The Middle attacks
+  * Evil Twin
+    * Rogue access point that is impersonating a legitimate access point - using the same SSID
 * Bluejack and Bluesnarfing
+  * Sending of unauthorized messages or data to a victim's device via Bluetooth technology
+  * Sending a vCard which contains a message in the name field to another Bluetooth-enabled device via the OB-EX (OBject-EXchange) protocol
+  * Bluesnarfing
+    * is the opposite of blue-jacking, in that data is pulled off the victims device
+      * Contact lists
+      * Pictures
+      * Messages
+    * All sorts of sensitive information can be stolen
+      * Pictures Text Messages
+      * Emails
+      * Personally Identifiable Information (PII)
 * Dissociation
+  * An Attacker can create a DoD scenario on a wireless network by sending a spoofed disassociation frame
+    * Source MAC address is set to that of the Access Point (AP)
 * Jamming
+  * Sending out excessive RF noise basically making Wi-Fi Channels unusable
+  * Requires specialized equipment
+  * illegal in most places
 * RFID
+  * Two types of RFID systems:
+    * Active Reader/Passive Tag (ARPT)
+    * Active Reader/Active Tag (ARAT)
+  * Most commercial RFID for inventory control has an effective distance of ~3 ft.
 * Near Field Communication (NFC)
+  * Technology to allow communication between devices within close proximity to each other (usually 3-4")
+    * Builds upon RFID (one-way) whereas NFC is two-way communication
+    * Can be used by a malicious attacker to steal data from a nearby device
 * IV Attack
-* On-Path Attacks (Formerly MiTM)
-* On-Path Attacks (Formerly MiTB)
+  * Initialization Vector Attack
+    * Weaker encryption had short IVs that would repeat fairly quickly
+    * Attacker could flood the network, sniff the packets and see the IVs being sent
+      * As they eventually repeat, the attacker could derive the IV and then gain access
+  * WEP uses a 24-bit IV
+    * Easily cracked
+    * Since beed deprecated
+* On-Path Attacks (Formerly MitB)
+  * MAn in the Browser attack
+    * The attacker send a malicious email or link and the Trojan gets installed on their machine
+    * When a browser is launched - the code is then executed
+    * Scans for known sites of attack
+    * When banking sites are visited, the malware launches in the background
+    * Executes commands/transactions, captures data, etc.
+  * The user may see a loading screen thinking that the site is slow or something is wrong, meanwhile the scripts/commands are running, once finished the user gets sent to the actual site
 * ARP Poisoning
+  * Also known as ARP Cache Poisoning
+    * Attacker sends out spoofed ARP (Address Resolution Protocol) messages onto a LAN to associate their machine with another host IP (i.e, default gateway) Layer 3 address down to the layer 1
+    * Allows the attacker to intercept data intended for another recipient 
+    * Can be used for DoS, MiTM, or session hijacking
 * IP/MAC Spoofing
-* MAC Flooding
-* MAC Cloning
+  * Masquerading as another using their IP or MAC address
+    * IP address spoofing
+    * Address Resolution Protocol (ARP) spoofing
+      * ARP resolves an IP address to a MAC address
+  * Can be used with MiTM attacks
+* MAC Flooding (Media Access Control)
+  * Network Switch will build a MAC table so that every computer connected to it will receive all its intended data
+  * An attacker send a large number of ethernet frames while inside the network so that the server fills up the MAC table to the point that it forces out the MAC Address from the table so it sends all packets to all PC's can cause a DoS attack
+  * This allows the attacker to see all the network traffic because the server doesn't know who to send packets to
 * DNS Poisoning
+  * Also known as "DNS Cache Poisoning"
+    * Manipulating that data in a DNS server's cache to point to different IP address
+    * Attack could redirect a site's traffic from the legitimate site to one they own
 * Typo Squatting/URL Hijacking
+  * Setting up domain names to capitalize on the fact that users make typos
+    * Facbook.com instead of Facebook.com
+    * Googgle, Googel, Googgle, etc.
+  * Fraudulent websites are set up to resemble the real ones
+    * Capture user credentials 
+  * Ad portals full of ads that might appeal to a user going to that website
+    * Hoping to create ad revenue by supplying complementary advertising
 * Distributed Denial of Service (DDoS)
+  * Large scale attack against a target
+    * Botnets
+    * Bot herders
+    * Command and control center
+  * C&C issues commands to botnet zombies to initiate attack against a target
+        * Could be hundreds, thousands or millions of zombies comprising a botnet army
+  * DoS
+    * Similar type of attack but on a much smaller scale
+* SMurf Attack (Amplification)
+  * DDoS type of attack
+    * Victim's IP address is spoofed and ICMP messages are broadcast to a computer network 
+    * Recipients will respond with reply to victim's IP address, flooding it with responses
+    * Goal being it will slow the target/victim PC to point of being unusable
+  * Mitigation
+    * Can be mitigated bu network administrators setting policy to disallow computers from responding to ICMP requests or broadcasts
+    * Configure routers to not forward broadcasts (default on most routers)
 * Malicious Code Execution
+* 
 
 ### Distinguishing Threat Actors, Vectors, and Intelligence Sources
 * Script Kiddies
