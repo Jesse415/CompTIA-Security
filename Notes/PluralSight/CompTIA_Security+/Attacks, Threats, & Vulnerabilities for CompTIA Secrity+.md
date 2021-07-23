@@ -927,39 +927,221 @@
   * Reputation Impact
 ### Defining Security Assessment Techniques
 * Specific Types of Threats
+  * Physical Damage
+  * Natural Events
+  * Loss of Essential services
+  * Compromise of Information
+  * Technical Failures
+  * Compromise of Functions
 * What is Cyber Threat Intelligence?
+  * Gathering, Evaluation and Analyzing Data
+    * Quickly gather information on what threats are being faced
+  * Strategize Defense
+    * Prevent the threat entirely or limit the damage caused
+  * Understand all Details of a Threat
+    * What tools are used, what was stolen, malware planted, methods of communication, etc.
 * Importance of Cyber Threat Intelligence
+  * Protect against disruption to the business
+  * Continue to Do Business/ Make money
+  * Retain Customer and Shareholder Confidence
+  * Increase Profitability and/or Partner value
 * Threat Intelligence Classification
+  * Unknown-Unknown
+    * We are unaware of the threat's existence. Basically flying blind with little chance to deter/remediate
+  * Known-Unknown
+    * Threats that are known, but we don't fully understand them (how they work, their intention, etc.)
+  * Known-Known
+    * Things (threats) we know about and we do fully understand. This understanding can be used to direct an outcome to deter or mitigate a threat
 * Strategic, Operational, and Tactical Intelligence
+  * Tactical Cyber Intelligence
+    * Involves specific actions being taken to defend networks against malicious actors attempting infiltration. Relies upon sufficient resources being devoted to the strategic and operational levels.
+  * Operational Cyber Intelligence
+    * Bridges the strategic and tactical levels of operations. Assess the organizations operating environment to identify indicators and warnings of potential cyber risks.
+  * Strategic Cyber Intelligence
+    * Requires senior leadership to determine objectives and guidance, based on what is known of potential adversaries and what security posture is already in place, in order to successfully assess threats.
 * Gathering and Correlating Information
+  * Data in a vacuum, without context, is extremely difficult to interpret and understand exactly what data is valuable and what is noise
+  * Categorize TTP's and Enrich Alerts to track, target and deter/prevent attacks
 * Stages of Risk Management
+  * Assessing Requirements
+    * Understanding the business and IT objectives and how security can meet those objective
+  * Aligning with Current Capabilities
+    * Understand what's available today and what capabilities exist across people, process and technology
+  * Creating Plans and Initiatives
+    * Quantify existing gaps and develop plans to prioritize initiatives and fill the gaps
+  * Creating Metrics and Monitoring Progress
+    * Develop metrics to track progress and ensure programs are meeting business requirements
 * Risk Management Data Sources
+  * Internal Sources
+    * Internal Audits
+    * Known Issues
+    * Previous Security Incidents
+  * Threat Intelligence
+    * Attack Frequency
+    * Cost to Company
+    * Emerging Bad Actors/Targets
+  * Contextual Data
+    * Industry
+    * Technology
+    * Geography
+    * Attack Method
 * Vulnerability Scanning
-* False Positive 
+  * Vulnerability scanning is different from penetration testing 
+    * Should be performed in tandem with pen testing
+    * Non-intrusive and can be performed with credentials or without credentials depending on risk tolerance
+  * Always obtain consent prior to beginning any type of vulnerability scan or pen test
+    * Make sure that you're operating with proper permissions
+    * Document the process and keep authorization forms readily available
+* False Positive
+  * No system is perfect and can occasionally generate false positives
+    * Identify a vulnerability that doesn't actually exist
+    * Results must be verified and audited for completeness and accuracy
 * False Positive Audits
+  * Controls should be routinely audited and reviewed
+    * False positives are events that aren't really incidents
+    * Anomalies that deviate from normal behavior
+    * False positives can create excess work or minimize attention when real incidents occur
 * False Negatives
+  * False negatives are the opposite of false positives
+    * You had an incident but failed to recognize it
+      * Controls set up improperly
+      * Operator error
+  * Type I,II,III Errors
+    * Type I - False positives
+    * Type II - False negatives
+    * Type III - You arrive at the right conclusion for the wrong reasons
 * Intrusive vs, Non-intrusive
+  * Intrusive testing can disrupt normal operations or have a greater impact of reducing system responsiveness
+  * Non-intrusive simply identifies vulnerabilities and reports finding for later review and possible remediation
 * Passively Test Security Controls
+  * Vulnerability scanning is by nature a passive test
+    * No disruption to the business
+    * Observes and reports on finding
+    * Does not take down systems, applications or services
 * Credentialed vs. Non-credentialed
+  * Scans and tests can be run with network/system credentials or without
+    * Credentialed access has easier access and less impact on tested systems as well as more accurate results
+    * Non-credentialed access requires more resources as a system may try to brute-force access or try multiple things to gain access
+  * Attackers typically start out with non-credentialed access
+    * They normally don't know much about the networks they're attacking
+  * Attackers try to gain privileged account access
+    * Gain administrator or root access
+    * Providing much more detail about the network and associated systems
 * Identify Vulnerabilities and Lack of Security Controls
+  * Scanners will report on the various vulnerabilities found
+    * Missing patches
+    * Security misconfigurations
+    * Known exploits
+  * Often times it's more than just the security control is misconfigured or missing a patch
+    * The security control itself might be missing 
+      * Anti-virus programs
+      * Missing patches
+    * Interview personnel
 * Identify Common Misconfigurations
+  * Nessus, Metasploit and other similar programs can identify security misconfigurations
+  * Review logs and perform audits of key assets
+      * Open ports
+      * Weak passwords
+      * Active default accounts and passwords
+      * Sensitive data leakage
+      * Audit against security baseline to identify unauthorized changes
 * Things to Remember
+  * Obtain Consent
+    * Very important to have consent in writing
+    * Vulnerability scanning or pentesting without consent can be considered an attack and grounds for dismissal
+  * Review company guidelines and "rules of engagement"
+  * Identify and assess tester's skills and background
+    * Verify and obtain references when possible
+    * Tester could potentially have access to sensitive corporate data
 * Common Vulnerabilities and Exposures (CVE)
-* CVSS
+  * Reference for publicly known information security vulnerabilities
+  * Maintained by the Mitre Corporation
+    * CVE-YYYY-NNNN
+* Common Vulnerability Scoring System (CVSS)
+  * Open framework for communicating the characteristics and severity of software vulnerabilities
+  * CVSS is maintained by Forum of Incident Response and Security Teams (FIRST) and is used to assess the principal characteristics of a vulnerability and produce a numerical score reflecting its severity (scale of 1-10)
+  * The Numerical score can then be translated into low, medium, high to help organizations properly assess vulnerabilities and prioritize resources to manage and mitigate.
+  * Scores
+    * Base Scores
+    * Temporal
+    * Environmental
+    * Overall
 * Security Information and Event Management (SEIM)
-* Security Orchestration, Automation, and Response
+  * SIEM are software suites that provide the following:
+    * Collects data
+    * Aggregates that data
+    * Analyzes normalized data for anomalies, threats and trends
+    * Investigates alerts, identifies breaches and takes action
+    * Remediates discovered vulnerabilities
+    * Reports on risk and compliance
+* Security Orchestration, Automation, and Response (SOAR)
+  * Complements SIEM
+  * Aggregates all tools wintin a SOC and provides automated playbooks
+    * Ticket creation, case management, etc. 
+    * Integrations with 3rd party products
 
 ### Defining Penetration Testing
 * Penetration Testing
+  * Also called pen testing, is the practice of testing a computer system, network or web application to find vulnerabilities that an attacker could exploit
 * Penetration Testing Steps
+  * Establish Goal/Set parameters
+  * Reconnaissance/Discovery
+  * Exploitation/Brute Force
+  * Take control/ Escalate Privilege
+  * Pivoting
+  * Data Collection/Reporting
 * Known, Unknown, and Partially Know Environments
+  * Unknown environment
+    * Tester is given little to no information about the target. More like real world, but more time consuming and more expensive
+  * Known environment
+    * Tester is given full disclosure about the target(i.e. network, hosts, source code, protocols, diagrams, etc.)
+  * Partially known 
+    * Combination of known and unknown, in that tester is given partial information about the target, but not access to documentation or data
 * Rule of Engagement
+  * RoE should clearly define what is in-scope for the engagement
+    * What activities are allowed
+      * What activities are prohibited
+      * Key stakeholders
+      * Relevant contact lists
+      * Communication methods/frequency
+      * Handling of sensitive data
+      * Specific goals/ definition of success
+  * CREST Framework
+    * Internationally recognized accreditation
+      * Various areas of information security and assurance
+    * Provides vetted resources for companies looking for providers
+      * Adherence to industry benchmarks and best practices
+    * Government and regulatory standardization
+      * Access to qualified talent, supply chain and logistics assurance
+      * https://crest-approved.org
 * Lateral Movement
+  * Attacker -> Internet -> Victim -> Network
 * Escalation of Privilege
+  * Primary goal when accessing a host
+    * Administrator or Root access to the host 
+      * Enables installation or persistence mechanisms
+      * Scan for additional exploits, vulnerabilities and misconfigurations
 * Methods of Privilege Escalation
+  * Hack the local admin account
+  * Exploit a vulnerability
+  * Use tools/brute force
+  * Social engineering
 * Persistence
+  * Installing backdoors or methods to maintain access to a host or network
 * Cleanup
+  * Removing traces of the attack
+    * Removing files
+    * Cleaning/deleting log files
+    * Intentionally leaving false artifacts
+    * Encrypting or deleting data
+  * Firewalls, routers, servers
 * Bug Bounty
+  * Program to encourage users to find and report bugs
+    * Awards range from recognition to compensation
+  * First known bug bounty was implemented in 1983
+  * Netscape engineer coined the phrase in 1995
+  * Bug bounty programs
+    * Hackerone.com offers bug bounty programs with a network of over 750k ethical hackers
 * Pivoting 
 * Types of Reconnaissance
 * War Flying
