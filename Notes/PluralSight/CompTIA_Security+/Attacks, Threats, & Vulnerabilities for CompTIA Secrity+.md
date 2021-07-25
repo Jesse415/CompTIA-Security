@@ -1143,8 +1143,44 @@
   * Bug bounty programs
     * Hackerone.com offers bug bounty programs with a network of over 750k ethical hackers
 * Pivoting 
+  * Pivoting is a technique that allows lateral movement from a compromised host
+    * Foothold is gained on a target system
+    * Compromised target system is leveraged to compromise other, normally inaccessible systems
+  * Many tools (Metasploit) have built in utilities to automate much of the process
 * Types of Reconnaissance
+  * Passive Reconnaissance
+    * Utilize publicly accessible methods to discover information about the target
+    * No direct contact with the target company
+    * Public records
+    * Google searches/GHDB
+    * Company website/Wayback Machine
+  * Active Reconnaissance
+    * Direct access to the target company
+    * Asking questions of employees, management, etc.
+    * Entering the facilities and walking the site
+    * Seeing where you can go, what things you can access
+    * Active scanning,fingerprinting the network, hosts, etc.
 * War Flying
+  * Using an airplane, drones or UAV to sniff Wi-Fi networks
+    * Calculate GPS coordinates
+    * Aerial imagery
+  * Typical flight times can last up to 30-45 minutes
+  * Drones have been shown to pick up networks even at elevations of 1,500 to 2,000 feet
 * War Driving
+  * Actively seeking out wireless access points with little to no security
+    * Open, WEP, WPA
 * Red, Blue, Purple, and White Security Teams
-
+  * Red team
+    * Offensive Security 
+    * Ethical Hackers
+    * Pen Testers
+  * Blue team
+    * Defensive security
+    * Infrastructure Protection
+    * DFIR
+  * Purple Team
+    * Facilitate collaboration
+    * Improve skills of both teams
+  * White team
+    * Define the rules of Engagement (RoE)
+    * Manage engagement
