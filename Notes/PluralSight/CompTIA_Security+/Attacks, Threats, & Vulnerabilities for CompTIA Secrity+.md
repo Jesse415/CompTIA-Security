@@ -1184,4 +1184,3 @@
   * White team
     * Define the rules of Engagement (RoE)
     * Manage engagement
-finished
