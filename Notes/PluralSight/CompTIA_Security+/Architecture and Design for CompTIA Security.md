@@ -191,6 +191,11 @@
 
 ### Understanding  Virtualization and Cloud Computing
 * Cloud Storage
+  * Storage external to a company's data center
+  * Accessible from outside the network
+  * Can be simply storage or there can be automation
+  * Access Controls
+    * Policies around who 
 * Cloud Computing
 * "X" as a service
 * Infrastructure as a Service (IaaS)
