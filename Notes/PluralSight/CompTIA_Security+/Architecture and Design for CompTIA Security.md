@@ -323,14 +323,38 @@
     * Replaces static scripts 
     * Collaboration and automation tools like Puppet and Chef enable speed of delivery
     * Reduce shadow IT, makes processes more secure and reduces risk of human error
-* Software Defined Networking 
+* Software Defined Networking
+  * Decouples the management plane from the data plane
+  * Places intelligence high up the stack
+  * Wholistic view of the network and programmatic tuning based on activity, workloads, etc.
+  * Routers/switches become "dumb devices" with intelligence handled bu centralized controller suite
 * Software Defined Visibility
+  * "Visibility fabric" that can be in-line or out of band and monitor entire network
+  * Proactively respond to events and adjust traffic, shut down ports, log/alert, capture traffic, decrypt/inspect SSL, etc.
 * Serverless Architecture
+  * Underlying infrastructure is abstracted from user (IaaS, PaaS)
+  * Only the code is managed/deployed and can scale at the individual call level
+  * Only pay for the times the function is called vs. paying for an application to be a;ways on and waiting for requests
 * IaaS, PaaS, FaaS, and SaaS Differentiators
 * Service Integrations and Resource Policies
+  * Services Integration
+    * Many cloud providers provide services like database, network, AI/ML, serverless, facial recognition, communication services
+  * Resource Policies
+    * Policies can be manages on-prem or in the cloud and enable dynamic resource deployment, monitoring, management and asset reclamation
 * Transit Gateway
+  * A transit gateway connects Virtual Private Clouds with on-premise networks. 
+  * Transit gateway controls how traffic is routed among all connected networks (hub and spoke architecture)
 * VM Sprawl Avoidance
+  * Large number virtual machines on a network without proper IT management
+  * Common causes
+    * Various departments/users who create their own VM's without proper procedures or lifecycle management
+  * Define virtual machine policy
+  * Create standard VM template
+  * Implement lifecycle management
+  * Routinely Audit
 * VM Escape
+  * Attack that enables the attacker to escape out of their VM and access resources on the host
+    * Could potentially interact with hose server and other VM guests being hosted on the server
 
 ### Implementing Secure Application Development, Deployment, and Automation
 
